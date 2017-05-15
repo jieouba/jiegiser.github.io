@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://jiegiser.github.io">
-  <title>Archives: 2017/5 | 杰的博客</title>
+  <title>第一篇 部署hexo | 杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="giser">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杰的博客">
-<meta property="og:url" content="http://jiegiser.github.io/archives/2017/05/index.html">
+  <meta name="description" content="好累啊！！很简单的博客部署1node.js,然后进行git的安装，最后进行hexo的安装，网上很多教程。（自己吃的亏是在打开hexo的配置文件，需要用nodepad后者sublime保存UTF8格式，不然出现乱码） ###新写文章1234567$ hexo new &quot;My New Post&quot;在cmd或者git bash中运行### Run server ，访问localhost:4000预览效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一篇 部署hexo">
+<meta property="og:url" content="http://jiegiser.github.io/2017/05/15/第一篇/index.html">
 <meta property="og:site_name" content="杰的博客">
-<meta property="og:description" content="giser">
+<meta property="og:description" content="好累啊！！很简单的博客部署1node.js,然后进行git的安装，最后进行hexo的安装，网上很多教程。（自己吃的亏是在打开hexo的配置文件，需要用nodepad后者sublime保存UTF8格式，不然出现乱码） ###新写文章1234567$ hexo new &quot;My New Post&quot;在cmd或者git bash中运行### Run server ，访问localhost:4000预览效果。">
+<meta property="og:updated_time" content="2017-05-15T14:16:08.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杰的博客">
-<meta name="twitter:description" content="giser">
+<meta name="twitter:title" content="第一篇 部署hexo">
+<meta name="twitter:description" content="好累啊！！很简单的博客部署1node.js,然后进行git的安装，最后进行hexo的安装，网上很多教程。（自己吃的亏是在打开hexo的配置文件，需要用nodepad后者sublime保存UTF8格式，不然出现乱码） ###新写文章1234567$ hexo new &quot;My New Post&quot;在cmd或者git bash中运行### Run server ，访问localhost:4000预览效果。">
   
     <link rel="alternative" href="/atom.xml" title="杰的博客" type="application/atom+xml">
   
@@ -166,76 +167,181 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-第一篇" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      第一篇 部署hexo
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/15/第一篇/" class="archive-article-date">
+
+        
+        <a href="/2017/05/15/第一篇/" class="archive-article-date">
   	<time datetime="2017-05-15T13:54:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/15/第一篇/">第一篇 部署hexo</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="好累啊！！"><a href="#好累啊！！" class="headerlink" title="好累啊！！"></a>好累啊！！</h2><h3 id="很简单的博客部署"><a href="#很简单的博客部署" class="headerlink" title="很简单的博客部署"></a>很简单的博客部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node.js,然后进行git的安装，最后进行hexo的安装，网上很多教程。（自己吃的亏是在打开hexo的配置文件，需要用nodepad后者sublime保存UTF8格式，不然出现乱码）</div></pre></td></tr></table></figure>
+<p>###新写文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">在cmd或者git bash中运行</div><div class="line"></div><div class="line"><span class="comment">### Run server ，访问localhost:4000预览效果。</span></div><div class="line"></div><div class="line">``` bash</div><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
+<h3 id="形成静态文件"><a href="#形成静态文件" class="headerlink" title="形成静态文件"></a>形成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<h3 id="同步到github。访问网站看看效果"><a href="#同步到github。访问网站看看效果" class="headerlink" title="同步到github。访问网站看看效果"></a>同步到github。访问网站看看效果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://jieouba.cn/wp-content/uploads/2017/05/2017051301220574.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://jieouba.cn/wp-content/uploads/2017/05/2017051301221087.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://jiegiser.github.io/2017/05/15/第一篇/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/15/hello-world/" class="archive-article-date">
-  	<time datetime="2017-05-15T05:14:45.675Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/15/hello-world/">Hello World</a>
-    </h1>
+  
+    <a href="/2017/05/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="第一篇" data-title="第一篇 部署hexo" data-url="http://jiegiser.github.io/2017/05/15/第一篇/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"[object Object]"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
+  <div id="SOHUCS" sid="第一篇" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "ture"; 
+var conf = "true"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
   
 
-    
+  
 
 
           </div>
@@ -258,8 +364,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
