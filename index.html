@@ -171,6 +171,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-arcgis-api-for-js（一）-之在线地图的加载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/">arcgis api for js（一） 之在线地图的加载</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/" class="archive-article-date">
+  	<time datetime="2017-05-19T14:41:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先在进行ArcGIs API for Javascript进行开发时，必须添加样式和API引用，<br> <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"><br>    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css"><br> 当然可以使用最新版的api来做开发，这里我使用的是3.9的版本。<br> 其中，引入的第一个是dojoDijit主题样式，因为ArcGIs API for Javascript是建立在dojo Javascript框架之上的。这里我引入了claro主题。</p>
+<ul>
+<li>首先进行加载模块，使用dojo.require(“esri.map”);将dojo的模块来创建地图。提供一个esri/map资源的引用，</li>
+<li><p>然后进行创建地图<br> function init() {</p>
+<pre><code>var map = new esri.Map(&quot;mapDiv&quot;, {//实例化一个map对象。
+    center: [-56.049, 38.485],//设置显示中心
+    zoom: 3,//设置显示级别
+    basemap: &quot;streets&quot;//是从arcgis.com中选择一个预先定义的地图。
+});
+</code></pre><p> }<br> dojo.ready(init);//可以将其包括在require（）函数中，保证HTML元素都加载，<br><em>*</em> 创建一个新的map地图是通过esri/map这个先前步骤中引入模块中的Map类来实现的，在require函数内部，使用构造函数来创建一个新的Map对象，Map对象的构造函数中接受两个参数，第一个是在web页面上用于承载地图的容器（div），还有一个就是可选参数，其作用是定义各种地图加载选项，是一个JSON对象。</p>
+<ul>
+<li><p>完整代码：<br>&lt;!DOCTYPE html&gt;<br><html><br><head><br><meta charset="utf-8"><br><title>地图加载</title><br><link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"><br><link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css"><br><style><br>html,<br>body,<br>#mapDiv {<br>   padding: 0;<br>   margin: 0;<br>   width: 100%;<br>   height: 100%;<br>}<br></style><br><script src="http://js.arcgis.com/3.9/"></script><br><script><br>dojo.require(“esri.map”);</p>
+<p>function init() {</p>
+<p>   var map = new esri.Map(“mapDiv”, {</p>
+<pre><code>center: [-56.049, 38.485],
+zoom: 3,
+basemap: &quot;streets&quot;
+</code></pre><p>   });<br>}<br>dojo.ready(init);<br></script><br></head><br><body class="claro"><br><div id="mapDiv"></div><br></body><br></html><br><img src="/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/jzcg.png" alt="加载地图"></p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webgis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">arcgis api for js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-关于将XXX-githun-io域名解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -274,11 +358,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dojo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webgis</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webgis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dojo</a>
         		</li>
       		
 		</ul>
@@ -720,11 +804,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dojo</a>
+                <a href="javascript:void(0)" class="js-tag color2">webgis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webgis</a>
+                <a href="javascript:void(0)" class="js-tag color3">arcgis api for js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dojo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,11 +824,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">信息系统分析与设计</a>
+                <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
+                <a href="javascript:void(0)" class="js-tag color5">信息系统分析与设计</a>
               </li>
              
               <li class="article-tag-list-item">
