@@ -262,17 +262,12 @@
         <p>首先在进行ArcGIs API for Javascript进行开发时，必须添加样式和API引用，<br> <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"><br>    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css"><br> 当然可以使用最新版的api来做开发，这里我使用的是3.9的版本。<br> 其中，引入的第一个是dojoDijit主题样式，因为ArcGIs API for Javascript是建立在dojo Javascript框架之上的。这里我引入了claro主题。</p>
 <ul>
 <li>首先进行加载模块，使用dojo.require(“esri.map”);将dojo的模块来创建地图。提供一个esri/map资源的引用，</li>
-<li><p>然后进行创建地图<br> function init() {</p>
-<pre><code>var map = new esri.Map(&quot;mapDiv&quot;, {//实例化一个map对象。
-    center: [-56.049, 38.485],//设置显示中心
-    zoom: 3,//设置显示级别
-    basemap: &quot;streets&quot;//是从arcgis.com中选择一个预先定义的地图。
-});
-</code></pre><p> }<br> dojo.ready(init);//可以将其包括在require（）函数中，保证HTML元素都加载，<br><em>*</em> 创建一个新的map地图是通过esri/map这个先前步骤中引入模块中的Map类来实现的，在require函数内部，使用构造函数来创建一个新的Map对象，Map对象的构造函数中接受两个参数，第一个是在web页面上用于承载地图的容器（div），还有一个就是可选参数，其作用是定义各种地图加载选项，是一个JSON对象。</p>
-<ul>
-<li>完整代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">    &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">    &lt;title&gt;地图加载&lt;/title&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"</span> /&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"http://js.arcgis.com/3.9/js/esri/css/esri.css"</span> /&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">    html,</div><div class="line">    body,</div><div class="line">    <span class="comment">#mapDiv &#123;</span></div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">        width: 100%;</div><div class="line">        height: 100%;</div><div class="line">    &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script src=<span class="string">"http://js.arcgis.com/3.9/"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">    dojo.require(<span class="string">"esri.map"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">init</span></span>() &#123;</div><div class="line"></div><div class="line">        var map = new esri.Map(<span class="string">"mapDiv"</span>, &#123;</div><div class="line">            center: [-56.049, 38.485],</div><div class="line">            zoom: 3,</div><div class="line">            basemap: <span class="string">"streets"</span></div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    dojo.ready(init);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body class=<span class="string">"claro"</span>&gt;</div><div class="line">    &lt;div id=<span class="string">"mapDiv"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<li>然后进行创建地图<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">init</span></span>() &#123;</div><div class="line"></div><div class="line">    var map = new esri.Map(<span class="string">"mapDiv"</span>, &#123;//实例化一个map对象。</div><div class="line">        center: [-56.049, 38.485],//设置显示中心</div><div class="line">        zoom: 3,//设置显示级别</div><div class="line">        basemap: <span class="string">"streets"</span>//是从arcgis.com中选择一个预先定义的地图。</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line">dojo.ready(init);//可以将其包括在require（）函数中，保证HTML元素都加载，</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>** 创建一个新的map地图是通过esri/map这个先前步骤中引入模块中的Map类来实现的，在require函数内部，使用构造函数来创建一个新的Map对象，Map对象的构造函数中接受两个参数，第一个是在web页面上用于承载地图的容器（div），还有一个就是可选参数，其作用是定义各种地图加载选项，是一个JSON对象。</p>
+<ul>
+<li>完整代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">    &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">    &lt;title&gt;地图加载&lt;/title&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"</span> /&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"http://js.arcgis.com/3.9/js/esri/css/esri.css"</span> /&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">    html,</div><div class="line">    body,</div><div class="line">    <span class="comment">#mapDiv &#123;</span></div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">        width: 100%;</div><div class="line">        height: 100%;</div><div class="line">    &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script src=<span class="string">"http://js.arcgis.com/3.9/"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">    dojo.require(<span class="string">"esri.map"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">init</span></span>() &#123;</div><div class="line"></div><div class="line">        var map = new esri.Map(<span class="string">"mapDiv"</span>, &#123;</div><div class="line">            center: [-56.049, 38.485],</div><div class="line">            zoom: 3,</div><div class="line">            basemap: <span class="string">"streets"</span></div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    dojo.ready(init);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body class=<span class="string">"claro"</span>&gt;</div><div class="line">    &lt;div id=<span class="string">"mapDiv"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/jzcg.png" alt="加载地图"></p>
@@ -875,7 +870,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">信息系统分析与设计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,15 +882,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">信息系统分析与设计</a>
               </li>
              
               <li class="article-tag-list-item">
