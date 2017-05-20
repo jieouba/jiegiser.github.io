@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="杰的博客">
 <meta property="og:description" content="首先在进行ArcGIs API for Javascript进行开发时，必须添加样式和API引用，      当然可以使用最新版的api来做开发，这里我使用的是3.9的版本。 其中，引入的第一个是dojoDijit主题样式，因为ArcGIs API for Javascript是建立在dojo Javascript框架之上的。这里我引入了claro主题。  首先进行加载模块，使用dojo.requ">
 <meta property="og:image" content="http://jiegiser.github.io/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/jzcg.png">
-<meta property="og:updated_time" content="2017-05-20T01:09:02.137Z">
+<meta property="og:updated_time" content="2017-05-20T14:20:36.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="arcgis api for js（一） 之在线地图的加载">
 <meta name="twitter:description" content="首先在进行ArcGIs API for Javascript进行开发时，必须添加样式和API引用，      当然可以使用最新版的api来做开发，这里我使用的是3.9的版本。 其中，引入的第一个是dojoDijit主题样式，因为ArcGIs API for Javascript是建立在dojo Javascript框架之上的。这里我引入了claro主题。  首先进行加载模块，使用dojo.requ">
@@ -204,7 +204,10 @@
 <li>完整代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">    &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">    &lt;title&gt;地图加载&lt;/title&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"</span> /&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"http://js.arcgis.com/3.9/js/esri/css/esri.css"</span> /&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">    html,</div><div class="line">    body,</div><div class="line">    <span class="comment">#mapDiv &#123;</span></div><div class="line">        padding: 0;</div><div class="line">        margin: 0;</div><div class="line">        width: 100%;</div><div class="line">        height: 100%;</div><div class="line">    &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script src=<span class="string">"http://js.arcgis.com/3.9/"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">    dojo.require(<span class="string">"esri.map"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">init</span></span>() &#123;</div><div class="line"></div><div class="line">        var map = new esri.Map(<span class="string">"mapDiv"</span>, &#123;</div><div class="line">            center: [-56.049, 38.485],</div><div class="line">            zoom: 3,</div><div class="line">            basemap: <span class="string">"streets"</span></div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    dojo.ready(init);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body class=<span class="string">"claro"</span>&gt;</div><div class="line">    &lt;div id=<span class="string">"mapDiv"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/jzcg.png" alt="加载地图"></p>
+<p><img src="/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/jzcg.png" alt="加载地图"><br>——————-这是一条华丽的分割线———————</p>
+<ul>
+<li>上面的实现代码可以这样写：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span></div><div class="line">        <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css"</span> /&gt;</div><div class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"http://js.arcgis.com/3.9/js/esri/css/esri.css"</span> /&gt;</div><div class="line">    &lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">        html,body,<span class="comment">#mapDiv&#123;</span></div><div class="line">            padding:0;</div><div class="line">            margin: 0;</div><div class="line">            height: 100%;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script src=<span class="string">"http://js.arcgis.com/3.9/"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">        require([<span class="string">"esri/map"</span>,<span class="string">"dojo/domReady!"</span>],<span class="keyword">function</span> (Map) &#123;</div><div class="line">            var map=new Map(<span class="string">"mapDiv"</span>,&#123;</div><div class="line">                center: [-56.049, 38.485],</div><div class="line">                zoom: 3,</div><div class="line">                basemap: <span class="string">"streets"</span></div><div class="line">                //sliderStyle:<span class="string">"small"</span></div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body class=<span class="string">"claro"</span>&gt;</div><div class="line">&lt;div id=<span class="string">"mapDiv"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></li>
+</ul>
 
       
 
@@ -462,15 +465,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dojo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webgis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,7 +481,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
+                <a href="javascript:void(0)" class="js-tag color5">dojo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搭建博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,7 +501,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">搭建博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
               </li>
             
             <div class="clearfix"></div>
