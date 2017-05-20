@@ -17,7 +17,7 @@
 <meta property="og:description" content="网页爬虫的原理：** 原理就是根据URL来获取他的网页信息，网页最重要的部分都在HTML中，下面就直接上代码。（首先你需要学习一下Python的基础）123import urllib2response=urllib2.urlopen(&quot;http://jiegiser.win&quot;)print response.read()  执行结果： 看这个网页的源码已经被扒下来了，">
 <meta property="og:image" content="http://jiegiser.github.io/2017/05/20/爬虫初试之Urllib库的基本使用/xg1.png">
 <meta property="og:image" content="http://jiegiser.github.io/2017/05/20/爬虫初试之Urllib库的基本使用/xg2.png">
-<meta property="og:updated_time" content="2017-05-20T01:05:06.690Z">
+<meta property="og:updated_time" content="2017-05-20T06:35:25.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫初试之Urllib库的基本使用 ">
 <meta name="twitter:description" content="网页爬虫的原理：** 原理就是根据URL来获取他的网页信息，网页最重要的部分都在HTML中，下面就直接上代码。（首先你需要学习一下Python的基础）123import urllib2response=urllib2.urlopen(&quot;http://jiegiser.win&quot;)print response.read()  执行结果： 看这个网页的源码已经被扒下来了，">
@@ -203,6 +203,11 @@
 </ul>
 <p>** 首先调用的是Urllib2库里面的urlopen方法，传入一个URL，这个网址是我的博客地址，协议是http，（也可以换成FTP等等），只是代表一个访问控制协议，<br>urlopen有三个参数，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">urlopen(url，data，timeout)</div></pre></td></tr></table></figure></p>
 <p>第一个参数是url，第二个参数是data是访问URL时要传送的数据，第三个参数就是timeout设置超时时间。第一个参数是必须要有的，第二三可以省略，默认data为none，timeout为socket_GLOBAL_DEFAULT_TIMEOUT,执行urlopen返回一个response对象，然后使用response.read()读取数据。<br>如果不加read（）,就会直接打印出该对象的描述。</p>
+<h2 id="我们也可以通过构造Request实现爬取网页："><a href="#我们也可以通过构造Request实现爬取网页：" class="headerlink" title="我们也可以通过构造Request实现爬取网页："></a>我们也可以通过构造Request实现爬取网页：</h2><ul>
+<li>上面的代码可以这样写：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rt urllib2</div><div class="line">request=urllib2.Request(<span class="string">"http://jiegiser.win"</span>)<span class="comment">#构造Request需要传入Url，Data。</span></div><div class="line">response=urllib2.urlopen(request)<span class="comment">#ulopen参数可以传入一个request请求，它就是一个Request实例。</span></div><div class="line"><span class="built_in">print</span> response.read()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>** 运行结果跟上面是一样的，这样写的好处是在构建请求是还需要加入很多内容，通过构建一个request，服务器响应得到应答，逻辑上看起来比较清楚。</p>
 
       
 
@@ -320,6 +325,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/05/20/爬虫之动态网页的抓取/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          爬虫之动态网页的抓取
+        
+      </div>
+    </a>
   
   
     <a href="/2017/05/19/arcgis-api-for-js（一）-之在线地图的加载/" id="article-nav-older" class="article-nav-link-wrap">
@@ -459,11 +473,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">信息系统分析与设计</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,7 +481,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">信息系统分析与设计</a>
               </li>
              
               <li class="article-tag-list-item">
