@@ -171,6 +171,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-arcgis-api-for-js-之地图导航部件和工具栏的添加" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/22/arcgis-api-for-js-之地图导航部件和工具栏的添加/">arcgis api for js 之地图导航部件和工具栏的添加</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/22/arcgis-api-for-js-之地图导航部件和工具栏的添加/" class="archive-article-date">
+  	<time datetime="2017-05-22T05:38:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="地图导航部件和工具栏"><a href="#地图导航部件和工具栏" class="headerlink" title="地图导航部件和工具栏"></a>地图导航部件和工具栏</h2><blockquote>
+<p>我们在创建一个图层并加载到地图上时，地图中会包含一个默认的缩放进度条，来进行放大缩小，默认他是显示的，但我们可以在实例化map对象时，可以控制他的显示。是通过slider属性来控制。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var layer=new ArcGISDynamicMapServiceLayer(<span class="string">"http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographic/ESRI_Population_World/MapServer"</span>,&#123;</div><div class="line">                <span class="string">"opacity"</span>:0.5,<span class="string">"slider"</span>:<span class="literal">false</span>,<span class="string">"nav"</span>:<span class="literal">true</span>,<span class="string">"imageParameters"</span>:inmageParameters&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>我们可以在地图中使用键盘或者鼠标来控制导航，例如：可以通过拖拽鼠标平移，鼠标向前（向后）滚动放大（缩小），按住Shift键并拖拽鼠标放大，按住shift+Ctrl组合键并拖拽鼠标缩小，按住Shift键并单击恢复居中，鼠标双击居中并放大，使用+（-）放大（缩小）一个级别等等。这些方法都可以通过map中的方法来控制使用，比如我们控制滚轮缩放，可以使用Map.disableScorollWheelZoom()方法。<h2 id="获取和设置地图显示范围"><a href="#获取和设置地图显示范围" class="headerlink" title="获取和设置地图显示范围"></a>获取和设置地图显示范围</h2><blockquote>
+<p>我们在调用我们发布的地图服务时，默认的初始地图范围是最后一个我们创建地图服务时保存的地图文档（.mxd）文件范围，我们可以通过map对象中的一些参数，来控制地图显示的范围。</p>
+</blockquote>
+</li>
+<li>在Map对象的构造函数中，设置一下参数，如下代码，定义了地图的中心坐标并设置了缩放级别为3<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var map=new Map(<span class="string">"mapDiv"</span>,&#123;</div><div class="line">                basemap:<span class="string">"topo"</span>,</div><div class="line">                center:[-122.45,37.75],</div><div class="line">                zoom:3</div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>————————–wait—————–</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webgis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">arcgis api for js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/22/arcgis-api-for-js-之地图导航部件和工具栏的添加/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-arcgis-api-for-js之调用本地地图服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -797,68 +871,6 @@
 
 
   
-    <article id="post-第一篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/15/第一篇/">第一篇 部署hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/15/第一篇/" class="archive-article-date">
-  	<time datetime="2017-05-15T13:54:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="好累啊！！"><a href="#好累啊！！" class="headerlink" title="好累啊！！"></a>好累啊！！</h2><h3 id="很简单的博客部署"><a href="#很简单的博客部署" class="headerlink" title="很简单的博客部署"></a>很简单的博客部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node.js,然后进行git的安装，最后进行hexo的安装，网上很多教程。（自己吃的亏是在打开hexo的配置文件，需要用nodepad后者sublime保存UTF8格式，不然出现乱码）</div></pre></td></tr></table></figure>
-<p>###新写文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">在cmd或者git bash中运行</div><div class="line"></div><div class="line"><span class="comment">### Run server ，访问localhost:4000预览效果。</span></div><div class="line"></div><div class="line">``` bash</div><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
-<h3 id="形成静态文件"><a href="#形成静态文件" class="headerlink" title="形成静态文件"></a>形成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<h3 id="同步到github。访问网站看看效果"><a href="#同步到github。访问网站看看效果" class="headerlink" title="同步到github。访问网站看看效果"></a>同步到github。访问网站看看效果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">搭建博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/15/第一篇/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -963,23 +975,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">信息系统分析与设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dojo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">搭建博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -991,7 +999,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
+                <a href="javascript:void(0)" class="js-tag color5">搭建博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dojo</a>
               </li>
             
             <div class="clearfix"></div>
