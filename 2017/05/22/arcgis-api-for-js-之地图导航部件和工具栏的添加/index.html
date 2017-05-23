@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://jiegiser.github.io/2017/05/22/arcgis-api-for-js-之地图导航部件和工具栏的添加/index.html">
 <meta property="og:site_name" content="杰的博客">
 <meta property="og:description" content="地图导航部件和工具栏 我们在创建一个图层并加载到地图上时，地图中会包含一个默认的缩放进度条，来进行放大缩小，默认他是显示的，但我们可以在实例化map对象时，可以控制他的显示。是通过slider属性来控制。12var layer=new ArcGISDynamicMapServiceLayer(&quot;http://sampleserver1.arcgisonline.com/ArcGIS/rest/se">
-<meta property="og:updated_time" content="2017-05-22T06:04:56.523Z">
+<meta property="og:updated_time" content="2017-05-23T05:09:45.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="arcgis api for js 之地图导航部件和工具栏的添加">
 <meta name="twitter:description" content="地图导航部件和工具栏 我们在创建一个图层并加载到地图上时，地图中会包含一个默认的缩放进度条，来进行放大缩小，默认他是显示的，但我们可以在实例化map对象时，可以控制他的显示。是通过slider属性来控制。12var layer=new ArcGISDynamicMapServiceLayer(&quot;http://sampleserver1.arcgisonline.com/ArcGIS/rest/se">
@@ -194,6 +194,7 @@
         <h2 id="地图导航部件和工具栏"><a href="#地图导航部件和工具栏" class="headerlink" title="地图导航部件和工具栏"></a>地图导航部件和工具栏</h2><blockquote>
 <p>我们在创建一个图层并加载到地图上时，地图中会包含一个默认的缩放进度条，来进行放大缩小，默认他是显示的，但我们可以在实例化map对象时，可以控制他的显示。是通过slider属性来控制。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var layer=new ArcGISDynamicMapServiceLayer(<span class="string">"http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographic/ESRI_Population_World/MapServer"</span>,&#123;</div><div class="line">                <span class="string">"opacity"</span>:0.5,<span class="string">"slider"</span>:<span class="literal">false</span>,<span class="string">"nav"</span>:<span class="literal">true</span>,<span class="string">"imageParameters"</span>:inmageParameters&#125;);</div></pre></td></tr></table></figure></p>
 </blockquote>
+<!--加载更多-->
 <ul>
 <li>我们可以在地图中使用键盘或者鼠标来控制导航，例如：可以通过拖拽鼠标平移，鼠标向前（向后）滚动放大（缩小），按住Shift键并拖拽鼠标放大，按住shift+Ctrl组合键并拖拽鼠标缩小，按住Shift键并单击恢复居中，鼠标双击居中并放大，使用+（-）放大（缩小）一个级别等等。这些方法都可以通过map中的方法来控制使用，比如我们控制滚轮缩放，可以使用Map.disableScorollWheelZoom()方法。<h2 id="获取和设置地图显示范围"><a href="#获取和设置地图显示范围" class="headerlink" title="获取和设置地图显示范围"></a>获取和设置地图显示范围</h2><blockquote>
 <p>我们在调用我们发布的地图服务时，默认的初始地图范围是最后一个我们创建地图服务时保存的地图文档（.mxd）文件范围，我们可以通过map对象中的一些参数，来控制地图显示的范围。</p>
@@ -202,7 +203,10 @@
 <li>在Map对象的构造函数中，设置一下参数，如下代码，定义了地图的中心坐标并设置了缩放级别为3<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var map=new Map(<span class="string">"mapDiv"</span>,&#123;</div><div class="line">                basemap:<span class="string">"topo"</span>,</div><div class="line">                center:[-122.45,37.75],</div><div class="line">                zoom:3</div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>————————–wait—————–</p>
+<h2 id="初始化地图范围"><a href="#初始化地图范围" class="headerlink" title="初始化地图范围"></a>初始化地图范围</h2><ul>
+<li>我们在初始化一个map对象的时候，可以给他传递一个Extent对象到Map.setExtent()方法中来改变地图显示的范围。代码如下：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var map=new Map(<span class="string">"mapDiv"</span>,&#123;</div><div class="line">                basemap:<span class="string">"topo"</span>,</div><div class="line">                center:[-122.45,37.75],</div><div class="line">                zoom:3</div><div class="line">            &#125;);</div><div class="line">           var extent=new Extent(-95.22,38.76,-95.210,38.784);</div><div class="line">           map.setExtent(extent=new);</div><div class="line">//也可以这样单独设置Extent的属性</div><div class="line">var extent=new Extent();</div><div class="line">extent.xmin=-95.22;</div><div class="line">extent.ymin=38.96;</div><div class="line">extent.xmax=-95.210;</div><div class="line">extent.ymax=38.784;</div><div class="line">map.setExtent(extent);</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
 
@@ -320,6 +324,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/05/23/arcgis-api-for-javascript之dojo的on方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          arcgis api for javascript之dojo的on方法
+        
+      </div>
+    </a>
   
   
     <a href="/2017/05/20/arcgis-api-for-js之调用本地地图服务/" id="article-nav-older" class="article-nav-link-wrap">
@@ -459,11 +472,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
+                <a href="javascript:void(0)" class="js-tag color5">dojo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,11 +492,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">域名解析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">搭建博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dojo</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo中插入图片</a>
               </li>
             
             <div class="clearfix"></div>

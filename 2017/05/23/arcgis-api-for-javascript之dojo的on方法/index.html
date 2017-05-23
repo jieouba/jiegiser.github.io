@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://jiegiser.github.io">
-  <title>Dojo的拖动效果 | 杰的博客</title>
+  <title>arcgis api for javascript之dojo的on方法 | 杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DOJO的拖动效果 在MOVEABLEWIDGETFRAME类的ATARTUP方法中，最后通过实例化一个DOJO/DND/MOVEABLE对象，实现小部件的拖动效果。在DOJO的支持下，实现拖动效果所需要做的只是使用DOJO所提供的DOJO标签属性标注出希望实现拖动效果的实体，简单地说就是如果希望一个实体拖动，则只需要在这个实体的标签里面加上DATA-DOJO-TYPE=“DOJO/DND/MOV">
-<meta name="keywords" content="webgis,dojo">
+  <meta name="description" content="dojo的on方法 首先需要了解dojo的on方法所接收的三个参数：map,click,displayCoordinates，前面两个参数代表对象和我们需要注册的事件，在这种情况下，就意味着我们正在为Map对象注册Click事件，在地图的显示范围内，每当用户点击鼠标就会触发此事件，最后一个参数代表事件的监听器，同样每当用户点击就会触发这个监听器，他返回的是地图当前显示的范围，例如如下代码：12va">
+<meta name="keywords" content="webgis,arcgis api for js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dojo的拖动效果">
-<meta property="og:url" content="http://jiegiser.github.io/2017/05/16/Dojo的拖动效果/index.html">
+<meta property="og:title" content="arcgis api for javascript之dojo的on方法">
+<meta property="og:url" content="http://jiegiser.github.io/2017/05/23/arcgis-api-for-javascript之dojo的on方法/index.html">
 <meta property="og:site_name" content="杰的博客">
-<meta property="og:description" content="DOJO的拖动效果 在MOVEABLEWIDGETFRAME类的ATARTUP方法中，最后通过实例化一个DOJO/DND/MOVEABLE对象，实现小部件的拖动效果。在DOJO的支持下，实现拖动效果所需要做的只是使用DOJO所提供的DOJO标签属性标注出希望实现拖动效果的实体，简单地说就是如果希望一个实体拖动，则只需要在这个实体的标签里面加上DATA-DOJO-TYPE=“DOJO/DND/MOV">
-<meta property="og:image" content="http://jiegiser.github.io/2017/05/16/Dojo的拖动效果/td.png">
-<meta property="og:updated_time" content="2017-05-16T14:38:50.592Z">
+<meta property="og:description" content="dojo的on方法 首先需要了解dojo的on方法所接收的三个参数：map,click,displayCoordinates，前面两个参数代表对象和我们需要注册的事件，在这种情况下，就意味着我们正在为Map对象注册Click事件，在地图的显示范围内，每当用户点击鼠标就会触发此事件，最后一个参数代表事件的监听器，同样每当用户点击就会触发这个监听器，他返回的是地图当前显示的范围，例如如下代码：12va">
+<meta property="og:updated_time" content="2017-05-23T05:33:56.010Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dojo的拖动效果">
-<meta name="twitter:description" content="DOJO的拖动效果 在MOVEABLEWIDGETFRAME类的ATARTUP方法中，最后通过实例化一个DOJO/DND/MOVEABLE对象，实现小部件的拖动效果。在DOJO的支持下，实现拖动效果所需要做的只是使用DOJO所提供的DOJO标签属性标注出希望实现拖动效果的实体，简单地说就是如果希望一个实体拖动，则只需要在这个实体的标签里面加上DATA-DOJO-TYPE=“DOJO/DND/MOV">
-<meta name="twitter:image" content="http://jiegiser.github.io/2017/05/16/Dojo的拖动效果/td.png">
+<meta name="twitter:title" content="arcgis api for javascript之dojo的on方法">
+<meta name="twitter:description" content="dojo的on方法 首先需要了解dojo的on方法所接收的三个参数：map,click,displayCoordinates，前面两个参数代表对象和我们需要注册的事件，在这种情况下，就意味着我们正在为Map对象注册Click事件，在地图的显示范围内，每当用户点击鼠标就会触发此事件，最后一个参数代表事件的监听器，同样每当用户点击就会触发这个监听器，他返回的是地图当前显示的范围，例如如下代码：12va">
   
     <link rel="alternative" href="/atom.xml" title="杰的博客" type="application/atom+xml">
   
@@ -173,37 +171,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Dojo的拖动效果" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-arcgis-api-for-javascript之dojo的on方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Dojo的拖动效果
+      arcgis api for javascript之dojo的on方法
     </h1>
   
 
         
-        <a href="/2017/05/16/Dojo的拖动效果/" class="archive-article-date">
-  	<time datetime="2017-05-16T14:09:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-16</time>
+        <a href="/2017/05/23/arcgis-api-for-javascript之dojo的on方法/" class="archive-article-date">
+  	<time datetime="2017-05-23T05:17:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="DOJO的拖动效果"><a href="#DOJO的拖动效果" class="headerlink" title="DOJO的拖动效果"></a>DOJO的拖动效果</h2><ul>
-<li>在MOVEABLEWIDGETFRAME类的ATARTUP方法中，最后通过实例化一个DOJO/DND/MOVEABLE对象，实现小部件的拖动效果。<br>在DOJO的支持下，实现拖动效果所需要做的只是使用DOJO所提供的DOJO标签属性标注出希望实现拖动效果的实体，简单地说就是如果希望一个实体拖动，则只需要在这个实体的标签里面加上DATA-DOJO-TYPE=“DOJO/DND/MOVEABLE”这个属性。例如要实现一个表格的拖动，则只需要在这个表格的申明标签“<table>”里面加上DATA-DOJO-TYPE=“DOJO/DND/MOVEABLE”这个属性，或者在<tr>或<td>标签中加上DOJOTYPE=“DOJO/DND/MOVEABLE”,也可以实现对应实体的拖动效果。<a id="more"></a>
-<img src="/2017/05/16/Dojo的拖动效果/td.png" alt="代码"></td></tr></table></li>
-<li>通过在一些实体的标签里面加上相应的Dojo标签属性来实现可拖动实体的创建。但是在更多的情况下，往往需要根据一些实际情况运行得到的数据来动态创建可拖动实体，是在MoveableWidgetFrame类的startup方法中。</li>
-</ul>
-<blockquote>
-<p>this.moveableHandle=new Moveable(thsi.id,{handle: ‘drangHandle’});</p>
-</blockquote>
+        <h2 id="dojo的on方法"><a href="#dojo的on方法" class="headerlink" title="dojo的on方法"></a>dojo的on方法</h2><blockquote>
+<p>首先需要了解dojo的on方法所接收的三个参数：map,click,displayCoordinates，前面两个参数代表对象和我们需要注册的事件，在这种情况下，就意味着我们正在为Map对象注册Click事件，在地图的显示范围内，每当用户点击鼠标就会触发此事件，最后一个参数代表事件的监听器，同样每当用户点击就会触发这个监听器，他返回的是地图当前显示的范围，例如如下代码：<br><!--显示全部--><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var mapClickEvent=on (map,<span class="string">"click"</span>,displayCoordinates);</div><div class="line">mapClickEvent.remove();</div></pre></td></tr></table></figure></p>
+<p>这句代码通过调用remove（）方法来完成移除单击事件。在使用dojo/on事件应该注意：</p>
 <ul>
-<li>在dojo/dnd/Moveable的构造函数中，第一个参数是需要拖动元素的ID，第二个参数是一个哈希对象，用来设置可拖动元素的一些与拖动相关的属性。在上句代码中设置了拖动柄。</li>
+<li>特别注意的是：在使用dojo/on模块时，对于事件的名称，必须省略前面的前缀on。</li>
+<li>dojo/on 还可以用于事件委托。</li>
 </ul>
+</blockquote>
 
       
 
@@ -252,7 +247,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dojo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">arcgis api for js</a>
         		</li>
       		
 		</ul>
@@ -308,7 +303,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://jiegiser.github.io/2017/05/16/Dojo的拖动效果/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://jiegiser.github.io/2017/05/23/arcgis-api-for-javascript之dojo的on方法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +317,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/05/18/关于将XXX-githun-io域名解析/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/23/arcgis-api-for-js-之添加图形到地图中/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          关于将XXX.githun.io域名解析
+          arcgis api for js 之添加图形到地图中
         
       </div>
     </a>
   
   
-    <a href="/2017/05/16/hexo中插入图片/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo中插入图片</div>
+    <a href="/2017/05/22/arcgis-api-for-js-之地图导航部件和工具栏的添加/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">arcgis api for js 之地图导航部件和工具栏的添加</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -346,7 +341,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Dojo的拖动效果" data-title="Dojo的拖动效果" data-url="http://jiegiser.github.io/2017/05/16/Dojo的拖动效果/"></div>
+	<div class="ds-thread" data-thread-key="arcgis-api-for-javascript之dojo的on方法" data-title="arcgis api for javascript之dojo的on方法" data-url="http://jiegiser.github.io/2017/05/23/arcgis-api-for-javascript之dojo的on方法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
